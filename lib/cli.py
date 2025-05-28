@@ -9,7 +9,7 @@ from lib.helper import (
 )
 
 def menu():
-    print("🎬 Welcome to the Movie App 🎬")
+    print("Welcome to the Movie App")
     print("1. View all movies")
     print("2. View all actors")
     print("3. View all directors")
@@ -63,7 +63,7 @@ def run():
             year = input("New Release Year (press enter to skip): ")
             director_id = input("New Director ID (press enter to skip): ")
             actor_id = input("New Main Actor ID (press enter to skip): ")
-            # Convert empty inputs to None
+           
             title = title if title else None
             year = int(year) if year else None
             director_id = int(director_id) if director_id else None
