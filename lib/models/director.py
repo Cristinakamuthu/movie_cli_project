@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from . import Base  # Import Base from models/__init__.py
+from . import Base  
 
 class Director(Base):
     __tablename__ = 'directors'
