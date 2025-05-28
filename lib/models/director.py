@@ -1,9 +1,8 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
+from . import Base  # Import Base from models/__init__.py
 
-
-class Director(declarative_base):
+class Director(Base):
     __tablename__ = 'directors'
 
     id = Column(Integer, primary_key=True)
