@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pysqlite3-binary = "*"
 
 [dev-packages]
 
