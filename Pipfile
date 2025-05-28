@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pysqlite3-binary = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 

@@ -1,4 +1,12 @@
-from lib.helper import get_all_movies, get_all_actors, get_all_directors, find_movie_by_id, create_movie
+from lib.helper import (
+    get_all_movies,
+    get_all_actors,
+    get_all_directors,
+    find_movie_by_id,
+    create_movie,
+    update_movie,
+    delete_movie
+)
 
 def menu():
     print("🎬 Welcome to the Movie App 🎬")
@@ -7,7 +15,9 @@ def menu():
     print("3. View all directors")
     print("4. Find movie by ID")
     print("5. Create a new movie")
-    print("6. Exit")
+    print("6. Update a movie")
+    print("7. Delete a movie")
+    print("8. Exit")
 
 def run():
     while True:
@@ -48,6 +58,32 @@ def run():
             print(f"{movie.title} was created successfully!")
 
         elif choice == "6":
+            id = input("Enter movie ID to update: ")
+            title = input("New Title (press enter to skip): ")
+            year = input("New Release Year (press enter to skip): ")
+            director_id = input("New Director ID (press enter to skip): ")
+            actor_id = input("New Main Actor ID (press enter to skip): ")
+            # Convert empty inputs to None
+            title = title if title else None
+            year = int(year) if year else None
+            director_id = int(director_id) if director_id else None
+            actor_id = int(actor_id) if actor_id else None
+
+            movie = update_movie(id, title, year, director_id, actor_id)
+            if movie:
+                print(f"Movie ID {id} updated successfully!")
+            else:
+                print("Movie not found.")
+
+        elif choice == "7":
+            id = input("Enter movie ID to delete: ")
+            success = delete_movie(id)
+            if success:
+                print(f"Movie ID {id} deleted successfully!")
+            else:
+                print("Movie not found or already deleted.")
+
+        elif choice == "8":
             print("Goodbye 🎥")
             break
 
